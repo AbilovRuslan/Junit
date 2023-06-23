@@ -30,7 +30,7 @@ public class WebTest extends test.BaseTest {
 
     static Stream<Arguments> getTopicCategories() {
         return Stream.of(
-                Arguments.of("Мужское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти", "Обувь", "Одежда", "Сумки", "Украшения","Ювелирные изделия")),
+                Arguments.of("Мужское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти", "Обувь", "Одежда", "Сумки","Ювелирные изделия")),
                 Arguments.of("Женское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти", "Обувь", "Одежда", "Сумки", "Украшения","Ювелирные изделия"))
         );
     }
@@ -39,7 +39,7 @@ public class WebTest extends test.BaseTest {
     public void categoryShouldBeOpenAfterClick(String categoryName, List<String> buttonName) {
         open("https://www.oskelly.ru/");
         $(".osk-header").$(byText(categoryName)).click();
-        $$(".osk-header-bottom top").filter(visible).shouldHave(CollectionCondition.texts(buttonName));
+        $$(".osk-header-bottom__link").filter(visible).shouldHave(CollectionCondition.texts(buttonName));
         }
 
     }
