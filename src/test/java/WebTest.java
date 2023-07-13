@@ -1,7 +1,6 @@
 package test;
 
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
@@ -29,8 +28,10 @@ public class WebTest extends test.BaseTest {
 
     static Stream<Arguments> getTopicCategories() {
         return Stream.of(
-                Arguments.of("Мужское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти", "Обувь", "Одежда", "Сумки","Ювелирные изделия")),
-                Arguments.of("Женское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти", "Обувь", "Одежда", "Сумки", "Украшения","Ювелирные изделия"))
+                Arguments.of("Мужское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти",
+                                                            "Обувь", "Одежда", "Сумки","Ювелирные изделия")),
+                Arguments.of("Женское", List.of("Выбор Oskelly", "Новинки", "Бренды", "Аксессуары", "Бьюти",
+                                                           "Обувь", "Одежда", "Сумки", "Украшения","Ювелирные изделия"))
         );
     }
     @ParameterizedTest(name = "Соответствие списка категорий заданному топику {0}")
